@@ -6,7 +6,7 @@ from models import app
 from models import db
 from models import auth
 
-def get_QnA(module_id):
+def get_QnA(module_id):	#finding question and answer based on id
 	qna=[]
 	all_users = db.child("Paper").get()
 	for user in all_users.each():
@@ -19,7 +19,7 @@ def get_QnA(module_id):
 					qna.append(value)
 	return qna
 
-def get_questions():
+def get_questions():  #getting all questions in a list
 	questions=[]
 	all_users = db.child("Paper").get()
 	for user in all_users.each():
@@ -29,7 +29,7 @@ def get_questions():
 				questions.append(value)
 	return questions
 
-def get_answers():
+def get_answers():	#getting all answers in a list
 	answers=[]
 	all_users = db.child("Paper").get()
 	for user in all_users.each():
@@ -52,12 +52,12 @@ def exam():
 	question=get_questions()
 	if request.method=='POST':
 		answers=get_answers()
-		for key,val in request.form.items():
+		for key,val in request.form.items():	#getting all the answers submitted by student
 			sol_given=request.form[key]
 			print(sol_given)
 			str(sol_given)
 			sol_by_student.append(sol_given)
-		while(i<len(sol_by_student)):
+		while(i<len(sol_by_student)):	#caalculating result
 			x=answers[i]
 			y=sol_by_student[i]
 			result_found=calc(x,y)
