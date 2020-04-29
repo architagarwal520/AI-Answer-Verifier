@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <title>{{title}}</title>
+    </head>
+
+    <body class="text-center">
+    {%if question and answer %}
+        <form method="post" action="">
+        <div class="container">
+            <br>
+            <h6 class="h3 mb-3 font-weight-normal">Question :</h6>
+            <br>
+            <textarea class="h3 mb-3 font-weight-normal"  rows="5" cols="50" name="ques">{{question}}</textarea>
+            <br>
+            <textarea name="ans" rows="5" cols="100" title="Answer">{{answer}}</textarea>
+            <br>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary">
+        
+        </form>
+
+       {% else %}
+        <form method="post" action="">
+        <div class="container">
+            <br>
+            <h6 class="h3 mb-3 font-weight-normal">Question :</h6>
+            <br>
+            <textarea class="h3 mb-3 font-weight-normal"  rows="5" cols="50" name="ques"></textarea>
+            <br>
+            <textarea name="ans" rows="5" cols="100" title="Answer"></textarea>
+            <br>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary">
+        
+        </form>
+        {% endif %}
+
+    </body>
+</html>
