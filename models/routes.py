@@ -120,8 +120,6 @@ def module_add():
 	return render_template('new_module.html')
 
 
-
-
 @app.route('/register',methods=['POST','GET']) 
 def register():
 	try:
@@ -129,9 +127,21 @@ def register():
 			email=request.form['e']
 			password=request.form['p']
 			user=auth.create_user_with_email_and_password(email, password)
-			return render_template('login.html')
+			return redirect(url_for('login'))
 	except expression as identifier:
 		return "please again"
-	
 	return render_template('register.html')
 
+
+@app.route('/login',methods=['POST','GET']) 
+def login():
+	if request.method=='POST':
+		email=request.form['e']
+		password=request.form['p']
+		user=auth.sign_in_with_email_and_password(email,password)
+		token=user['localId']
+		if(token=='wBrCxmN5qzZkoUI48eh2y9g3Hi83'):
+			return redirect(url_for('admin'))
+		else:
+			return redirect(url_for('exam'))
+	return render_template('login.html')
