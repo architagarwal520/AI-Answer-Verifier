@@ -4,6 +4,8 @@ from pyrebase import pyrebase
 
 
 app = Flask(__name__)
+app.config['SECRET_KEY']='a0e5afdbfeaea4959fe59f99f585d7a6'
+
 config = {
   "apiKey": "AIzaSyBVrFHPJsViH2_svVfFJeMA4p-aZvl_Ua8",
   "authDomain": "ai-answer-verifier-master.firebaseapp.com",
@@ -21,5 +23,7 @@ db = firebase.database()
 
 
 auth=firebase.auth()
+
+
 
 from models import routes

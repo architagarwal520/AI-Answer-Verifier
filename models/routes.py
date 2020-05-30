@@ -1,10 +1,11 @@
 
-from flask import Flask, render_template, request,redirect,url_for
+from flask import Flask, render_template, request,redirect,url_for,session
 from  models.nav_test import calc
 import requests
 from models import app
 from models import db
 from models import auth
+import secrets
 
 def get_QnA(module_id):	#finding question and answer based on id
 	qna=[]
@@ -44,40 +45,51 @@ def get_answers():	#getting all answers in a list
 @app.route('/',methods=['POST','GET']) 
 @app.route('/exam', methods=['POST', 'GET']) 
 def exam(): 
-	question=[]
-	answers=[]
-	sol_by_student=[]
-	result_calc=[]
-	i=0
-	question=get_questions()
-	if request.method=='POST':
-		answers=get_answers()
-		for key,val in request.form.items():	#getting all the answers submitted by student
-			sol_given=request.form[key]
-			print(sol_given)
-			str(sol_given)
-			sol_by_student.append(sol_given)
-		while(i<len(sol_by_student)):	#caalculating result
-			x=answers[i]
-			y=sol_by_student[i]
-			result_found=calc(x,y)
-			result_calc.append(result_found)
-			i=i+1
-		return render_template('result.html',res=result_calc)
+	token=session.get('token',None)
+	if(token):
+		question=[]
+		answers=[]
+		sol_by_student=[]
+		result_calc=[]
+		i=0
+		question=get_questions()
+		if request.method=='POST':
+			answers=get_answers()
+			for key,val in request.form.items():	#getting all the answers submitted by student
+				sol_given=request.form[key]
+				print(sol_given)
+				str(sol_given)
+				sol_by_student.append(sol_given)
+			while(i<len(sol_by_student)):	#calculating result
+				x=answers[i]
+				y=sol_by_student[i]
+				result_found=calc(x,y)
+				result_calc.append(result_found)
+				i=i+1
+			return render_template('result.html',res=result_calc)
+		return render_template('exam.html',title='Exam',question=question)
+	else:
+		return redirect(url_for('login'))
 
-	return render_template('exam.html',title='Exam',question=question)
 
 
 @app.route('/admin', methods=['POST', 'GET']) 
 def admin():
-	question=[]
-	question=get_questions()
-	keys=[]
-	all_users = db.child("Paper").get()
-	for user in all_users.each():
-		key_of=user.key()
-		keys.append(key_of)
-	return render_template('admin.html',title='admin',question=question,keys=keys)
+	token=session.get('token',None)
+	if(token=='wBrCxmN5qzZkoUI48eh2y9g3Hi83'):
+		question=[]
+		question=get_questions()
+		keys=[]
+		all_users = db.child("Paper").get()
+		for user in all_users.each():
+			key_of=user.key()
+			keys.append(key_of)
+		return render_template('admin.html',title='admin',question=question,keys=keys)
+	elif(not token):
+		return redirect(url_for('login'))
+	else:
+		return redirect(url_for('exam'))
+
 
 @app.route('/admin/<module_id>', methods=['GET','POST']) 
 def module(module_id):
@@ -128,8 +140,8 @@ def register():
 			password=request.form['p']
 			user=auth.create_user_with_email_and_password(email, password)
 			return redirect(url_for('login'))
-	except expression as identifier:
-		return "please again"
+	except:
+		return "please try again"
 	return render_template('register.html')
 
 
@@ -140,6 +152,7 @@ def login():
 		password=request.form['p']
 		user=auth.sign_in_with_email_and_password(email,password)
 		token=user['localId']
+		session['token']=token
 		if(token=='wBrCxmN5qzZkoUI48eh2y9g3Hi83'):
 			return redirect(url_for('admin'))
 		else:
