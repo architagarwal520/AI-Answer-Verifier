@@ -10,12 +10,13 @@
         <form method="post" action="">
         <div class="container">
             <br>
-            <h6 class="h3 mb-3 font-weight-normal">Question :</h6>
+            <h6 class="h3 mb-3 font-weight-normal">Questions :</h6>
             <br>
             <textarea class="h3 mb-3 font-weight-normal"  rows="5" cols="50" name="ques">{{question}}</textarea>
             <br>
             <textarea name="ans" rows="5" cols="100" title="Answer">{{answer}}</textarea>
             <br>
+            <textarea name="keywords" rows="5" cols="100" title="Keywords">{{keywords}}</textarea>
         </div>
         <input type="submit" value="Submit" class="btn btn-primary">
         
@@ -27,9 +28,11 @@
             <br>
             <h6 class="h3 mb-3 font-weight-normal">Question :</h6>
             <br>
-            <textarea class="h3 mb-3 font-weight-normal"  rows="5" cols="50" name="ques"></textarea>
+            <textarea class="h3 mb-3 font-weight-normal"  placeholder="Enter Question" rows="5" cols="50" name="ques"></textarea>
             <br>
-            <textarea name="ans" rows="5" cols="100" title="Answer"></textarea>
+            <textarea name="ans" rows="5" cols="100" placeholder="Enter Answer" title="Answer"></textarea>
+            <br>
+            <textarea name="keywords" rows="5" cols="50" placeholder="Enter Keywords" title="keywords"></textarea>
             <br>
         </div>
         <input type="submit" value="Submit" class="btn btn-primary">
