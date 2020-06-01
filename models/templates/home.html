@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <title></title>
   </head>
@@ -11,7 +11,7 @@
     <header class="site-header clearfix">
  <nav>
   <div class="logo">
-    <a href="home.html"><img src="images/ll.jpg" alt="AI ANSWER VERIFIER"></a>
+    <a href="home.html"><img src="{{url_for('static',filename='images/ll.jpg')}}" alt="AI ANSWER VERIFIER"></a>
   </div>
   <div class="menu">
    <ul>
@@ -24,7 +24,7 @@
  </nav>
  <section>
   <div class="leftside">
-   <img src="images/j.png">
+   <img src="{{url_for('static',filename='images/j.png')}}">
   </div>
   <div class="rightside">
    <h1>Welcome to</h1>
