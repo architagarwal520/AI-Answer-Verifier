@@ -2,38 +2,39 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/login.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <title>Sign up</title>
 </head>
 
 <body>
     <nav>
-       
+        <div class="logo">
+          <a href="{{url_for('home')}}"><img src="{{url_for('static',filename='images/ll.jpg')}}" alt="AI ANSWER VERIFIER"></a>
+        </div>
         <div class="menu">
          <ul>
           <li><a href="{{url_for('home')}}" style="color:gold">Home</a></li>
-          <li><a href="register.html" style="color:gold">Registeration</a></li>
+          <li><a href="{{url_for('login')}}" style="color:gold">Login</a></li>
          </ul>
         </div>
       </nav>
-      <center>
-        <div class="logo">
-            <a href="{{url_for('home')}}"><img src="{{url_for('static',filename='images/ll.jpg')}}" alt="AI ANSWER VERIFIER"></a>
-          </div>
-          <h1>
-              Create a free account on the AI ANSWER VERIFIER
-              Come join this great learning community. Already have an account Log in <a href="{{url_for('login')}}" style="color:gold">Login</a>
-          Please enter the details below.
-            </h1>
-      </center>
-<center>
+<div class="container" style="width: 30%;margin:150px auto;">
+    <h4>Sign Up Form</h4>
 <form method='post' action="">
-    Email:<input type="text" name="e">
-    Password:<input type="password" name="p">
-    <input type="submit" value="sign up">
+<div class="form-group">
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="text" name="e" class="form-control form-control-lg" id="email" placeholder="Enter Email">
+  </div>
+  <div class="form-group">
+    <label for="pass">Password:</label>
+    <input type="password" name="p" class="form-control form-control-lg" id="pass" placeholder="Enter Password">
+  </div>
+  <input type="submit" class="btn btn-primary" value="Create Account">
+</div>
 </form>
-</center>
+</div>   
 <body>
 
 </html>
