@@ -1,10 +1,45 @@
+</html>
 <html>
-    <head>
-        <title>
-            result
-        </title>
-    </head>
-    <body>
-        {{res}}
-    </body>
+<head>
+  <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/result.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <title>Result</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+          <a href="{{url_for('home')}}"><img src="{{url_for('static',filename='images/ll.jpg')}}" alt="AI ANSWER VERIFIER"></a>
+        </div>
+        <div class="menu">
+         <ul>
+          <li><a href="{{url_for('home')}}" style="color:gold">Home</a></li>
+          
+         </ul>
+        </div>
+      </nav>
+
+      <h1>
+          Answer Key:
+      </h1>
+      <center>
+      <table>
+        <tr>
+          <th>Question Number</th>
+          <th>Solution</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td> {{res}}</td>
+          </tr>
+        </table>
+        </center>
+
+    
+
+
+<body>
+    
 </html>
