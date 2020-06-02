@@ -56,7 +56,8 @@ nav{
 .logout ul li:hover{
       background: linear-gradient(57deg, #1E4D92, #00C6A7 );
     }
-section{ display: flex; background-image: url("../images/q7.jpg"); height: 85%; }
+section{ display: flex; background-image: url("../images/q7.jpg");  background-size: cover;
+    background-position: center ; height: 85%; }
 
 .exam-center { width:100% ; text-align: center;}
 .exam-center h1 {text-align: center;
