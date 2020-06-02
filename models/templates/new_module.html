@@ -1,44 +1,64 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style3.css')}}">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <title>{{title}}</title>
     </head>
 
-    <body class="text-center">
+    <body>
+      <header class="admin-header clearfixr">
+        <nav>
+  <div class="logo">
+    <a href="{{url_for('home')}}"><img src="{{url_for('static',filename='images/ll.jpg')}}" alt="AI ANSWER VERIFIER"></a>
+  </div>
+  <div class="logout">
+   <ul>
+    <li><a href="{{url_for('exam')}}" style="color:gold">Questions</a></li>
+    <li><a href="{{url_for('home')}}" style="color:gold">Logout</a></li>
+   </ul>
+  </div>
+ </nav>
+     <section>
+       <div class="admin-center">
+         <h2> Answer/Keywords Set </h2>
     {%if question and answer %}
         <form method="post" action="">
         <div class="container">
             <br>
-            <h6 class="h3 mb-3 font-weight-normal">Questions :</h6>
+            <h6 class="h3 mb-3 font-weight-normal" style=" text-align: center;">Questions :</h6>
             <br>
-            <textarea class="h3 mb-3 font-weight-normal"  rows="5" cols="50" name="ques">{{question}}</textarea>
+            <textarea class="h3 mb-3 font-weight-normal"  rows="5" cols="50" name="ques" placeholder="Enter Question here..." style=" background-image: url("../images/12.jpg"); background-repeat: repeat;">{{question}}</textarea>
             <br>
-            <textarea name="ans" rows="5" cols="100" title="Answer">{{answer}}</textarea>
+            <textarea name="ans" rows="5" cols="100" title="Answer" placeholder="Enter Answer here..." style=" background-image: url("../images/12.jpg"); background-repeat: repeat; ">{{answer}}</textarea>
             <br>
-            <textarea name="keywords" rows="5" cols="100" title="Keywords">{{keywords}}</textarea>
+            <textarea name="keywords" rows="5" cols="100" title="Keywords" placeholder="Enter Keywords here..." style=" background-image: url("../images/12.jpg"); background-repeat: repeat;>{{keywords}}</textarea>
         </div>
         <input type="submit" value="Submit" class="btn btn-primary">
-        
+
         </form>
 
        {% else %}
         <form method="post" action="">
         <div class="container">
             <br>
-            <h6 class="h3 mb-3 font-weight-normal">Question :</h6>
+            <h6 class="h3 mb-3 font-weight-normal" style=" text-align: center;">Question :</h6>
             <br>
-            <textarea class="h3 mb-3 font-weight-normal"  placeholder="Enter Question" rows="5" cols="50" name="ques"></textarea>
+            <textarea class="h3 mb-3 font-weight-normal"  placeholder="Enter Question here..." rows="5" cols="50" name="ques" style=" background-image: url("../images/12.jpg"); background-repeat: repeat;" ></textarea>
             <br>
-            <textarea name="ans" rows="5" cols="100" placeholder="Enter Answer" title="Answer"></textarea>
+            <textarea name="ans" rows="5" cols="100" placeholder="Enter Answer here..." title="Answer" style=" background-image: url("../images/12.jpg"); background-repeat: repeat;" ></textarea>
             <br>
-            <textarea name="keywords" rows="5" cols="50" placeholder="Enter Keywords" title="keywords"></textarea>
+            <textarea name="keywords" rows="5" cols="50" placeholder="Enter Keywords here..." title="keywords" style=" background-image: url("../images/12.jpg"); background-repeat: repeat;" ></textarea>
             <br>
         </div>
         <input type="submit" value="Submit" class="btn btn-primary">
-        
+
         </form>
         {% endif %}
-
+        </div>
+        </section>
+      </header>
     </body>
 </html>
