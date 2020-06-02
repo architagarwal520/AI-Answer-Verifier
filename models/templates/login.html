@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <title>Sign IN</title>
 </head>
@@ -10,14 +10,12 @@
 <body>
     <nav>
         <div class="logo">
-          <a href="home.html"><img src="images/ll.jpg" alt="AI ANSWER VERIFIER"></a>
+          <a href="{{url_for('home')}}"><img src="{{url_for('static',filename='images/ll.jpg')}}" alt="AI ANSWER VERIFIER"></a>
         </div>
         <div class="menu">
          <ul>
-          <li><a href="home.html" style="color:gold">Home</a></li>
-          <li><a href="login.html" style="color:gold">Login</a></li>
+          <li><a href="{{url_for('home')}}" style="color:gold">Home</a></li>
           <li><a href="register.html" style="color:gold">Registeration</a></li>
-          <li><a href="" style="color:gold">About Us</a></li>
          </ul>
         </div>
       </nav>
