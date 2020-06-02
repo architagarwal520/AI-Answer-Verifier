@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -7,20 +8,36 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style3.css')}}">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <title>{{title}}</title>
     </head>
 
-    <body class="text-center">
-
+    <body>
+      <header class="admin-header clearfix">
+        <nav>
+  <div class="logo">
+    <a href="{{url_for('home')}}"><img src="{{url_for('static',filename='images/ll.jpg')}}" alt="AI ANSWER VERIFIER"></a>
+  </div>
+  <div class="logout">
+   <ul>
+    <li><a href="{{url_for('exam')}}" style="color:gold">Questions</a></li>
+    <li><a href="{{url_for('home')}}" style="color:gold">Logout</a></li>
+   </ul>
+  </div>
+ </nav>
+     <section>
+       <div class="admin-center">
+         <h2> Question/Answer Modify Page </h2>
         <div class="container">
             <br>
-            <h6 class="h3 mb-3 font-weight-normal">Question :</h6>
+            <h6 class="h3 mb-3 font-weight-normal" style=" text-align: center;">Question :</h6>
             <br>
-                <h3 class="h3 mb-3 font-weight-normal">{{question}}</h3>
+            <h3 class="h3 mb-3 font-weight-normal" style="color:black; font-weight: bold; text-align: center;">{{question}}</h3>
             <br>
-            <textarea name="{{q}}" rows="5" cols="100" title="Answer">{{answer}}</textarea>
+            <textarea name="{{q}}" rows="5" cols="100" title="Answer" placeholder="Enter Answer here..." style=" background-image: url("../images/12.jpg"); background-repeat: repeat; ">{{answer}}</textarea>
             <br>
-            <textarea name="{{q}}" rows="5" cols="100" title="Keywords">{{keywords}}</textarea>
+            <textarea name="{{q}}" rows="5" cols="100" title="Keywords" placeholder="Enter Keywords here.." style=" background-image: url("../images/12.jpg"); background-repeat: repeat;">{{keywords}}</textarea>
         </div>
         <div>
             <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('module_update', module_id=key) }}">Update</a>
@@ -45,5 +62,8 @@
           </div>
           </div>
           </div>
+          </div>
+          </section>
+          </header>
     </body>
 </html>
