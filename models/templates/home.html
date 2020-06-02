@@ -11,13 +11,13 @@
     <header class="site-header clearfix">
  <nav>
   <div class="logo">
-    <a href="home.html"><img src="{{url_for('static',filename='images/ll.jpg')}}" alt="AI ANSWER VERIFIER"></a>
+    <a href="{{url_for('home')}}"><img src="{{url_for('static',filename='images/ll.jpg')}}" alt="AI ANSWER VERIFIER"></a>
   </div>
   <div class="menu">
    <ul>
-    <li><a href="home.html" style="color:gold">Home</a></li>
-    <li><a href="login.html" style="color:gold">Login</a></li>
-    <li><a href="register.html" style="color:gold">Registeration</a></li>
+    <li><a href="{{url_for('home')}}" style="color:gold">Home</a></li>
+    <li><a href="{{url_for('login')}}" style="color:gold">Login</a></li>
+    <li><a href="{{url_for('register')}}" style="color:gold">Registeration</a></li>
     <li><a href="" style="color:gold">About Us</a></li>
    </ul>
   </div>

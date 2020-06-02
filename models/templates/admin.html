@@ -11,11 +11,11 @@
     <header class="admin-header clearfix">
  <nav>
   <div class="logo">
-    <a href="home.html"><img src="{{url_for('static',filename='images/ll.jpg')}}" alt="AI ANSWER VERIFIER"></a>
+    <a href="{{url_for('home')}}"><img src="{{url_for('static',filename='images/ll.jpg')}}" alt="AI ANSWER VERIFIER"></a>
   </div>
   <div class="logout">
    <ul>
-    <li><a href="home.html" style="color:gold">Logout</a></li>
+    <li><a href="{{url_for('home')}}" style="color:gold">Logout</a></li>
    </ul>
   </div>
  </nav>
