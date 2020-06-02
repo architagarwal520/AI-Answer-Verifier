@@ -27,16 +27,16 @@
         {% for q in question%}
         <div class="container">
             <br>
-            <h6 class="h3 mb-3 font-weight-normal">Question :</h6>
+            <h6 class="h3 mb-3 font-weight-normal" style=" text-align: center;">Question :</h6>
             <br>
-            <h3 class="h3 mb-1 font-weight-normal"><a href="{{url_for('module',module_id=keys[question.index(q)])}}" style="color:black; font-weight: bold;">{{q}}</a></h3>
+            <h3 class="h3 mb-1 font-weight-normal"><a href="{{url_for('module',module_id=keys[question.index(q)])}}" style="color:black; font-weight: bold; text-align: center;">{{q}}</a></h3>
             <br>
             <br>
         </div>
         {% endfor %}
 
         <div>
-        <a class="btn btn-secondary btn-sm mt-5 mb-1" href="{{ url_for('module_add') }}" style="color:gold;margin-left:350px">Add a Question</a>
+        <a class="btn btn-secondary btn-sm mt-5 mb-1" href="{{ url_for('module_add') }}" style="color:gold; text-align: center;">Add a Question</a>
         </div>
         </form>
       </div>
