@@ -75,3 +75,21 @@ section{ display: flex; background-image: url("../images/q.jpg"); height: 85%; }
       text-transform: uppercase;
       font-family: "Times New Roman", Times, serif;
     }
+
+.admin-center{ text-align: center;
+          }
+
+.container h6{
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  color: black;
+  text-decoration: underline;
+
+}
+.container h3{
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  font-weight: bold;
+}
