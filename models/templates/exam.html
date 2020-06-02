@@ -1,25 +1,45 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style2.css')}}">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <title>{{title}}</title>
     </head>
-
-    <body class="text-center">
+    <body>
+      <header class="exam-header clearfix">
+        <nav>
+         <div class="logo">
+           <a href="{{url_for('home')}}"><img src="{{url_for('static',filename='images/ll.jpg')}}" alt="AI ANSWER VERIFIER"></a>
+         </div>
+         <div class="logout">
+          <ul>
+           <li><a href="{{url_for('home')}}" style="color:gold">Logout</a></li>
+          </ul>
+         </div>
+        </nav>
+        <section>
+          <div class="exam-center">
+            <h1> EXAMINATION PAGE </h1>
+            <h2> Answer the Following Questions </h2>
         <form method="post" action="">
         {% for q in question%}
         <div class="container">
             <br>
-            <h6 class="h3 mb-3 font-weight-normal">Question :</h6>
+            <h6 class="h3 mb-3 font-weight-normal" style=" text-align: center;">Question :</h6>
             <br>
-            <h3 class="h3 mb-3 font-weight-normal">{{q}}</h3>
+            <h3 class="h3 mb-3 font-weight-normal" style="color:black; font-weight: bold; text-align: center;">{{q}}</h3>
             <br>
             <textarea name="{{q}}" rows="5" cols="100" title="Answer" default="none"></textarea>
             <br>
         </div>
         {% endfor %}
-        <input type="submit" value="Submit" class="btn btn-primary">
-        
+        <input type="submit" value="Submit" class="btn btn-primary" style="color:gold; text-align: center;">
+
         </form>
+        </div>
+        </section>
+        </header>
     </body>
 </html>

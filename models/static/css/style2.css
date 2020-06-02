@@ -1,0 +1,91 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.exam-header {
+    width: 100%;
+    height: 100vh;
+
+
+}
+
+nav{
+    width: 100%; height:15%;
+    display: flex;
+    background-color: black;
+
+}
+
+.logo{
+    width: 40%;
+    height: 100px;
+}
+
+.logo img{
+    width: 500px;
+    height: 100px;
+}
+
+.logout{
+    width: 60%; height: 100px;
+
+}
+
+.logout ul{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:  center;
+}
+
+.logout ul li{
+    list-style: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding-top: 40px;
+    padding-right: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    background: black;
+    border-radius: 4px 4px 4px 4px;
+    padding: 20px 35px ;
+}
+
+.logout ul li:hover{
+      background: linear-gradient(57deg, #1E4D92, #00C6A7 );
+    }
+section{ display: flex; background-image: url("../images/q7.jpg"); height: 85%; }
+
+.exam-center { width:100% ; text-align: center;}
+.exam-center h1 {text-align: center;
+    color: black;
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    text-decoration: underline;
+  }
+  .exam-center h2 {text-align: center;
+      color: black;
+      font-size: 35px;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-family: "Times New Roman", Times, serif;
+    }
+.container h6{
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  color: black;
+  text-decoration: underline;
+
+}
+.container h3{
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  font-weight: bold;
+}
