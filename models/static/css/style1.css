@@ -58,7 +58,7 @@ nav{
     }
 section{ display: flex; background-image: url("../images/q7.jpg"); height: 85%; }
 
-.admin-center { width:100% ;}
+.admin-center { width:100% ; text-align: center;}
 .admin-center h1 {text-align: center;
     color: black;
     font-size: 50px;
@@ -75,9 +75,6 @@ section{ display: flex; background-image: url("../images/q7.jpg"); height: 85%; 
       text-transform: uppercase;
       font-family: "Times New Roman", Times, serif;
     }
-
-.admin-center{ text-align: center;
-          }
 
 .container h6{
   font-size: 25px;
