@@ -77,8 +77,8 @@ section{ display: flex;  }
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
-  }
+    width: 100;
+}
   td, th {
     border: 1px solid #0000b3;
     text-align: left;
