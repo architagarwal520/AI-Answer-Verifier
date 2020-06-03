@@ -25,6 +25,7 @@
           Answer Key:
       </h1>
       <center>
+    {% for result in res %}
       <table>
         <tr>
           <th>Question Number</th>
@@ -32,9 +33,10 @@
         </tr>
         <tr>
             <td>.</td>
-            <td> {{res}}</td>
+            <td> {{result}}</td>
           </tr>
         </table>
+      {% endfor %}
         </center>
 
     
