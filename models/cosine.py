@@ -38,13 +38,13 @@ def  givKeywordsValue(X,Y):
 		    c+= l1[i]*l2[i] 
     cosine = c / float((sum(l1)*sum(l2))**0.5) 
     cosine=cosine*100
-    if cosine > 90:
+    if cosine > 60:
             kval = 1
-    elif cosine > 80:
+    elif cosine > 50:
             kval = 2
-    elif cosine > 60:
-            kval = 3
     elif cosine > 40:
+            kval = 3
+    elif cosine > 30:
             kval = 4
     elif cosine > 20:
             kval = 5

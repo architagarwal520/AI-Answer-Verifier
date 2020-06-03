@@ -63,6 +63,7 @@ def home():
 @app.route('/exam', methods=['POST', 'GET']) 
 def exam(): 
 	token=session.get('token',None)
+	print("token:",token)
 	if(token):
 		question=[]
 		answers=[]
@@ -184,7 +185,8 @@ def login():
 
 @app.route('/logout',methods=['POST','GET']) 
 def logout():
-	print(session)
+	print("sessions:",session)
 	for key in dict(session):
 		session.pop(key)
+	print("sessions after logout:",session)
 	return redirect(url_for('home'))
