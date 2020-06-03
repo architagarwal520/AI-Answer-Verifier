@@ -25,18 +25,21 @@
           Answer Key:
       </h1>
       <center>
-    {% for result in res %}
+    
       <table>
         <tr>
           <th>Question Number</th>
           <th>Solution</th>
         </tr>
+        {% for result in res %}
         <tr>
             <td>.</td>
             <td> {{result}}</td>
-          </tr>
+            
+        </tr>
+        {% endfor %}}
         </table>
-      {% endfor %}
+      
         </center>
 
     
