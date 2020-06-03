@@ -1,5 +1,5 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <header class="result-header clearfix">
     <nav>
         <div class="logo">
           <a href="{{url_for('home')}}"><img src="{{url_for('static',filename='images/ll.jpg')}}" alt="AI ANSWER VERIFIER"></a>
@@ -20,9 +21,12 @@
          </ul>
         </div>
       </nav>
-
+    </br>
+    </br>
+    </br>
+    <section>
       <h1>
-          Answer Key:
+          ANSWER KEY
       </h1>
       <center>
     
@@ -41,7 +45,8 @@
         </table>
       
         </center>
-
+        </section>
+  </header>
    </body>
     
 </html>
