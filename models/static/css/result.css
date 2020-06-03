@@ -9,7 +9,7 @@ html,body {
     background-position: center ;
    }
 
-.site-header {
+.result-header {
     width: 100%;
     height: 100vh;
     background-image: url("../images/d.jpg");
@@ -19,6 +19,7 @@ html,body {
 nav{
     width: 100%; height: 100px;
     display: flex;
+    background-color: black;
 
 }
 
@@ -62,6 +63,14 @@ nav{
 .menu ul li:hover{
       background: linear-gradient(57deg, #1E4D92, #00C6A7 );
     }
+.h1{ text-align: center;
+    text-decoration: underline;
+    font-size: 50px;
+    color: gold;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;}
 
 section{ display: flex;  }
 
@@ -71,11 +80,8 @@ section{ display: flex;  }
 .rightside{  width: 80%; height: 300px; color: white; text-align: center; margin-top: 50px; padding: 40px;}
 
 
-.h1{
-    color:white;
-}
 table {
-    font-family: arial, sans-serif;
+    
     border-collapse: collapse;
     width: 100;
 }
@@ -85,7 +91,8 @@ table {
     padding: 8px;
     color:white;
   }
-  
+tr :hover { background-color: pink; }
+
   tr:nth-child(even) {
     background-color: #00001a;
   }
