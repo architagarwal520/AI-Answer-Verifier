@@ -56,7 +56,7 @@ nav{
 .logout ul li:hover{
       background: linear-gradient(57deg, #1E4D92, #00C6A7 );
     }
-section{ display: flex; background-image: url("../images/a.jpg"); background-repeat: repeat; background-attachment: scroll; height: 85%; }
+section{ display: flex; background-image: url("../images/a.jpg"); background-repeat: repeat; background-attachment: local; height: 85%; }
 
 .admin-center { width:100% ; text-align: center;}
 
