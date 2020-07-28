@@ -83,7 +83,7 @@ section{ display: flex;  }
 table {
     
     border-collapse: collapse;
-    width: 100;
+    margin:300px 300px;
 }
   td, th {
     border: 1px solid #0000b3;
@@ -100,3 +100,4 @@ label{
     color:white;
     font-size: large;
 }
+
