@@ -35,10 +35,10 @@
           <th>Question Number</th>
           <th>Solution</th>
         </tr>
-        {% for result in res %}
+        {% for i in range(n) %}
         <tr>
-            <td>.</td>
-            <td> {{result}}</td>
+            <td>{{ques[i]}}</td>
+            <td> {{res[i]}}</td>
             
         </tr>
         {% endfor %}}

@@ -86,7 +86,8 @@ def exam():
 				result_found=calc(x,y,z)
 				result_calc.append(result_found)
 				i=i+1
-			return render_template('result.html',res=result_calc)
+			number=len(question)	
+			return render_template('result.html',res=result_calc,ques=question,n=number)
 		return render_template('exam.html',title='Exam',question=question)
 	else:
 		return redirect(url_for('login'))

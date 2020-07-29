@@ -46,28 +46,37 @@ def  givKeywordsValue(X,Y):
 	# form a set containing keywords of both strings 
 	rvector = Y_set
 	print("idf:",rvector)
+	print("length of idf",len(rvector))
 	#Y_listing=list(Y_set)
+	for i in range(len(rvector)):
+		l2.append(1)
 	for w in rvector: 
+		print("w is:",w)
 		if w in X_set: 
+			print("appended 1 for:",w)
 			l1.append(1) # create a vector 
 		else:
+			if len(wordnet.synsets(w))==0:
+				l1.append(1)
+				continue
 			for syn in wordnet.synsets(w):
 				for l in syn.lemmas():
 					name=l.name()
 					if name in X_set:
 						l1.append(1)
+						print("appended 1 for:",w,"and",name)
 						break
 					else:
 						l1.append(0)
+						print("appended 0 for:",w)
 						break
 				break
-
-		if w in Y_set: 
-			l2.append(1) 
-		else: 
-			l2.append(0) 
+		
+	
 	print("l1:",l1)
+	print("length of l1",len(l1))
 	print("l2:",l2)
+	print("length of l2",len(l2))
 	c = 0
 	# cosine formula 
 	for i in range(len(rvector)): 
@@ -77,15 +86,15 @@ def  givKeywordsValue(X,Y):
 	else:
 		cosine = c / float((sum(l1)*sum(l2))**0.5) 
 		cosine=cosine*100
-	if cosine > 60:
+	if cosine > 80:
 			kval = 1
-	elif cosine > 50:
+	elif cosine > 70:
 			kval = 2
-	elif cosine > 40:
+	elif cosine > 60:
 			kval = 3
-	elif cosine > 30:
+	elif cosine > 50:
 			kval = 4
-	elif cosine > 20:
+	elif cosine > 40:
 			kval = 5
 	else:
 			kval = 6
