@@ -59,6 +59,12 @@ nav{
     padding: 20px 35px ;
 }
 
+h3{
+    text-align: center;
+    color : white;
+    font-weight: bold;
+}
+
 .menu ul li:hover{
       background: linear-gradient(57deg, #1E4D92, #00C6A7 );
     }
@@ -83,11 +89,9 @@ section{ display: flex;  }
 .rightside p {
     font-size: 1.1rem; padding: 30px 0; padding-left: 300px; text-align: center; font-family: 'Montserrat', sans-serif;}
 
-h4{
-    color:white;
-}
+
 
 label{
-    color:white;
+    color : white;
     font-size: large;
 }
