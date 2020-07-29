@@ -57,7 +57,7 @@ nav{
       background: linear-gradient(57deg, #1E4D92, #00C6A7 );
     }
 
-section{ display: flex; background-image: url("../images/q7.jpg");  background-repeat: repeat; background-attachment: local; height: 85%; }
+section{ display: flex; background-image: url("../images/q7.jpg"); background-repeat: repeat; background-attachment: fixed;}
 
 .exam-center { width:100% ; text-align: center;}
 .exam-center h1 {text-align: center;
@@ -80,7 +80,7 @@ section{ display: flex; background-image: url("../images/q7.jpg");  background-r
   font-size: 25px;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-  color: black;
+  color: crimson;
   text-decoration: underline;
 
 }
