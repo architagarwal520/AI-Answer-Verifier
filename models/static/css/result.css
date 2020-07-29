@@ -56,34 +56,14 @@ nav{
 .menu ul li:hover{
       background: linear-gradient(57deg, #1E4D92, #00C6A7 );
     }
-.h1{ text-align: center;
-    text-decoration: underline;
-    font-size: 50px;
-    color: gold;
-    font-weight: 900;
-    text-transform: uppercase;
-    font-family: "Times New Roman", Times, serif;
-    font-style: italic;}
 
-section{ display: flex; text-align: center; padding: 30px;}
-
-.leftside { width:20% ; height: 200px;}
-.leftside img{ padding-top: 90px; padding-right: 170%; height: 300%; width: 1300px;}
-
-.rightside{  width: 80%; height: 300px; color: white; text-align: center; margin-top: 50px; padding: 40px;}
-
-
-table {
-    text-align:center;
-    border-collapse: collapse;
-    margin:300px 300px;
-}
-  td, th {
+td, th {
     border: 1px solid #0000b3;
     text-align: left;
     padding: 8px;
     color:white;
   }
+  
 tr :hover { background-color: pink; }
 
   tr:nth-child(even) {
