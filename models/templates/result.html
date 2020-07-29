@@ -1,52 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/result.css')}}">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <title>Result</title>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      .talign{
+        text-align: center;
+      }
+    </style>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/result.css')}}">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title>Result</title>
+  </head>
 
-<body>
-  <header class="result-header clearfix">
-    <nav>
+  <body>
+      <nav>
         <div class="logo">
           <a href="{{url_for('home')}}"><img src="{{url_for('static',filename='images/ll.jpg')}}" alt="AI ANSWER VERIFIER"></a>
         </div>
         <div class="menu">
-         <ul>
-          <li><a href="{{url_for('home')}}" style="color:gold">Home</a></li>
-           <li><a href="{{url_for('logout')}}" style="color:gold">Logout</a></li>
-         </ul>
+          <ul>
+            <li><a href="{{url_for('home')}}" style="color:gold">Home</a></li>
+            <li><a href="{{url_for('logout')}}" style="color:gold">Logout</a></li>
+          </ul>
         </div>
       </nav>
-    </br>
-    </br>
-    </br>
-    <section>
-      <h1>
-          ANSWER KEY
-      </h1>
-      <center>
-    
-      <table style="width:100px;height:100px;">
-        <tr>
-          <th>Question Number</th>
-          <th>Solution</th>
-        </tr>
-        {% for i in range(n) %}
-        <tr>
-            <td>{{ques[i]}}</td>
-            <td> {{res[i]}}</td>
-            
-        </tr>
-        {% endfor %}}
+    <br><br><br><h1 style="text-align: center;text-decoration: underline;color: gold;">EXAMINATION RESULTS</h1>
+     <div >
+        <table style="margin-top: 10vh; width: 100vh;">
+          <tr>
+            <th>Question</th>
+            <th>Marks Obtained</th>
+            <th>Maximum Marks</th>
+          </tr>
+          {% for i in range(n) %}
+          <tr>
+              <td>{{ques[i]}}</td>
+              <td>{{res[i]}}</td>
+              <td>9</td>  
+          </tr>
+          {% endfor %}
         </table>
-      
-        </center>
-        </section>
-  </header>
-   </body>
-    
+    </div>
+  </body>
 </html>
