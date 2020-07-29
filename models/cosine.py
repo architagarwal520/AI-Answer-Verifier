@@ -57,7 +57,7 @@ def  givKeywordsValue(X,Y):
 			l1.append(1) # create a vector 
 		else:
 			if len(wordnet.synsets(w))==0:
-				l1.append(1)
+				l1.append(0)
 				continue
 			for syn in wordnet.synsets(w):
 				for l in syn.lemmas():
@@ -86,6 +86,7 @@ def  givKeywordsValue(X,Y):
 	else:
 		cosine = c / float((sum(l1)*sum(l2))**0.5) 
 		cosine=cosine*100
+			
 	if cosine > 80:
 			kval = 1
 	elif cosine > 70:
@@ -98,6 +99,10 @@ def  givKeywordsValue(X,Y):
 			kval = 5
 	else:
 			kval = 6
+	no_words=len(Y.split())
+	if no_words<15:
+		kval=6
+    
 				
 	return kval
 

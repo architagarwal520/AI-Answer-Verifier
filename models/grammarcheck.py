@@ -12,8 +12,12 @@ def grammarcal(Y,k):
 
     if no_of_errors > 5 or k == 6:
             g = 0
-    else:
-            g = 1
+    else:    
+        no_words=len(Y.split())
+        if no_words<15:
+                g=0
+        else: 
+                g = 1
 
     return g
 
