@@ -7,10 +7,6 @@ from nltk.stem import PorterStemmer
 
 
 
-
-
-
-
 def  givKeywordsValue(X,Y):
 				
 	# X answers
@@ -21,6 +17,7 @@ def  givKeywordsValue(X,Y):
 	# tokenization 
 	X_list = word_tokenize(X)
 	Y_list = word_tokenize(Y) 
+	#print("Y_list",Y_list)
 
 	# sw contains the list of stopwords 
 	sw = stopwords.words('english') 
@@ -45,15 +42,15 @@ def  givKeywordsValue(X,Y):
 
 	# form a set containing keywords of both strings 
 	rvector = Y_set
-	print("idf:",rvector)
-	print("length of idf",len(rvector))
+	# print("idf:",rvector)
+	# print("length of idf",len(rvector))
 	#Y_listing=list(Y_set)
 	for i in range(len(rvector)):
 		l2.append(1)
 	for w in rvector: 
-		print("w is:",w)
+		# print("w is:",w)
 		if w in X_set: 
-			print("appended 1 for:",w)
+			# print("appended 1 for:",w)
 			l1.append(1) # create a vector 
 		else:
 			if len(wordnet.synsets(w))==0:
@@ -64,19 +61,19 @@ def  givKeywordsValue(X,Y):
 					name=l.name()
 					if name in X_set:
 						l1.append(1)
-						print("appended 1 for:",w,"and",name)
+						# print("appended 1 for:",w,"and",name)
 						break
 					else:
 						l1.append(0)
-						print("appended 0 for:",w)
+						# print("appended 0 for:",w)
 						break
 				break
 		
 	
-	print("l1:",l1)
-	print("length of l1",len(l1))
-	print("l2:",l2)
-	print("length of l2",len(l2))
+	# print("l1:",l1)
+	# print("length of l1",len(l1))
+	# print("l2:",l2)
+	# print("length of l2",len(l2))
 	c = 0
 	# cosine formula 
 	for i in range(len(rvector)): 
@@ -99,7 +96,8 @@ def  givKeywordsValue(X,Y):
 			kval = 5
 	else:
 			kval = 6
-	no_words=len(Y.split())
+	no_words=len(X.split())
+	print("no of words",no_words)
 	if no_words<15:
 		kval=6
     

@@ -25,7 +25,7 @@ model.fit(x,y)
 
 def calc(X,Y,Z):
 	predicted=model.predict([testcal(X,Y,Z)]) 
-	#print(testcal(X,Y,Z))
+	print(testcal(X,Y,Z))
 	print(predicted)
 	# val=int(predicted[0])*5/9
 	# print(val)
