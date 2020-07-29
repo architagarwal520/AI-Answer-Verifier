@@ -22,16 +22,14 @@
  </nav>
      <section>
        <div class="admin-center">
-         <h1> ADMIN </h1>
+         <h1> ADMIN </h1><br>
          <h2> QUESTIONS </h2>
         <form method="post" action="">
         {% for q in question%}
         <div class="container">
             <br>
-            <h6 class="h3 mb-3 font-weight-normal" style=" text-align: center;">Question :</h6>
-            <br>
+            <h6 class="h3 mb-3 font-weight-normal" style=" text-align: center;">Question : </h6>
             <h3 class="h3 mb-1 font-weight-normal"><a href="{{url_for('module',module_id=keys[question.index(q)])}}" style="color:black; font-weight: bold; text-align: center;">{{q}}</a></h3>
-            <br>
             <br>
         </div>
         {% endfor %}
