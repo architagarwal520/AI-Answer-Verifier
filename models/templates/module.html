@@ -32,15 +32,14 @@
         <div class="container">
             <br>
             <h6 class="h3 mb-3 font-weight-normal" style=" text-align: center;">Question :</h6>
-            <br>
             <h3 class="h3 mb-3 font-weight-normal" style="color:black; font-weight: bold; text-align: center;">{{question}}</h3>
             <br>
-            <textarea name="{{q}}" rows="5" cols="100" title="Answer" placeholder="Enter Answer here..." style=" background-image: url("../images/12.jpg"); background-repeat: repeat; ">{{answer}}</textarea>
+            <textarea name="{{q}}" rows="15" cols="100" title="Answer" placeholder="Enter Answer here..." style= "background-image: url("../images/12.jpg"); background-repeat: repeat; " required>{{answer}}</textarea>
             <br>
-            <textarea name="{{q}}" rows="5" cols="100" title="Keywords" placeholder="Enter Keywords here.." style=" background-image: url("../images/12.jpg"); background-repeat: repeat;">{{keywords}}</textarea>
+            <textarea name="{{q}}" rows="10" cols="100" title="Keywords" placeholder="Enter Keywords here.." style = "background-image: url("../images/12.jpg"); background-repeat: repeat;" required>{{keywords}}</textarea>
         </div>
         <div>
-            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('module_update', module_id=key) }}">Update</a>
+            <br><a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('module_update', module_id=key) }}">Update</a>
             <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
          </div>
          <!-- Modal -->
